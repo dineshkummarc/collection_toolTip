@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>mootools demos - Tips</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+	<script type="text/javascript" src="mootools.js"></script>
+	<script type="text/javascript" src="demos.js"></script>
+	<script type="text/javascript">
+		window.addEvent('domready', function(){
+			/* Tips 1 */
+			var Tips1 = new Tips($$('.Tips1'));
+			
+			/* Tips 2 */
+			var Tips2 = new Tips($$('.Tips2'), {
+				initialize:function(){
+					this.fx = new Fx.Style(this.toolTip, 'opacity', {duration: 500, wait: false}).set(0);
+				},
+				onShow: function(toolTip) {
+					this.fx.start(1);
+				},
+				onHide: function(toolTip) {
+					this.fx.start(0);
+				}
+			});
+			
+			/* Tips 3 */
+			var Tips3 = new Tips($$('.Tips3'), {
+				showDelay: 400,
+				hideDelay: 400,
+				fixed: true
+			});
+			
+			/* Tips 4 */
+			var Tips4 = new Tips($$('.Tips4'), {
+				className: 'custom'
+			});
+		}); 
+	</script>
+	
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="container">
+		
+
+		<div id="content">
+		  <div id="demo">
+				<h3>Tips 1</h3>
+<img src="moo.png" alt="mooCow" class="Tips1" title="Tips Title :: This is my tip content" />
+
+<h3>Tips 2</h3>
+<img src="moo.png" alt="mooCow" class="Tips2" title="Tips Title :: This is my tip content" />
+
+<h3>Tips 3</h3>
+
+Fixed tooltip: <a href="http://www.hotajax.org" onclick="return false;" class="Tips3" title="Hot!Ajax Magazine">Hotajax.org</a>
+
+<h3>Tips 4</h3>
+Custom className: <a href="http://www.hotajax.org" onclick="return false;" class="Tips4" title="Hot!Ajax Magazine">Hotajax.org</a>			</div>
+	
+	  </div>
+	
+	</div>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>jQuery Tooltip</title>
+
+<style type="text/css">
+	body { font-family: verdana, arial, sans-serif; font-size: 0.8em; background-color: black; color: white; }
+	a { color: white; } #example a:hover { text-decoration: none; }
+	
+	span.show-tooltip-text { display: none; position: absolute; font-size: 0.9em; background-image: url(bg.gif); background-repeat: repeat-x; padding: 6px; padding-left: 12px; padding-right: 12px; color: white; }
+</style>
+
+<script language="JavaScript" src="jq.js"></script>
+<script language="JavaScript">
+
+ShowTooltip = function(e)
+{
+	var text = $(this).next('.show-tooltip-text');
+	if (text.attr('class') != 'show-tooltip-text')
+		return false;
+
+	text.fadeIn()
+		.css('top', e.pageY)
+		.css('left', e.pageX+10);
+
+	return false;
+}
+HideTooltip = function(e)
+{
+	var text = $(this).next('.show-tooltip-text');
+	if (text.attr('class') != 'show-tooltip-text')
+		return false;
+
+	text.fadeOut();
+}
+
+SetupTooltips = function()
+{
+	$('.show-tooltip')
+		.each(function(){
+			$(this)
+				.after($('<span/>')
+					.attr('class', 'show-tooltip-text')
+					.html($(this).attr('title')))
+				.attr('title', '');
+		})
+		.hover(ShowTooltip, HideTooltip);
+}
+
+$(document).ready(function() {
+	SetupTooltips();
+});
+
+</script>
+</head>
+
+<body>
+	
+	<a href="#" class="show-tooltip" title="Start your search with Google!">Google.</a>
+
+	<br/><br/>
+
+	<input type="submit" value="Example Button" class="show-tooltip" title="<strong>HTML</strong> works as normal inside the tooltip.<br/>Multi-line tooltips look and function perfectly fine, as well."/>
+
+</body>
+</html>

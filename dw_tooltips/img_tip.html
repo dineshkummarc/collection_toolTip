@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Demo</title>
+<link rel="stylesheet" href="css/ex.css" type="text/css">
+<style type="text/css">
+div#tipDiv {
+    padding:4px;
+    color:#000; font-size:11px; 
+    background-color:#E1E5F1; border:1px solid #667295; 
+    width:200px; 
+}
+
+</style>
+<script src="js/dw_event.js" type="text/javascript"></script>
+<script src="js/dw_viewport.js" type="text/javascript"></script>
+<script src="js/dw_tooltip.js" type="text/javascript"></script>
+<script src="js/dw_tooltip_aux.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+dw_Tooltip.defaultProps = {
+    wrapFn: dw_Tooltip.wrapImageToWidth
+}
+
+dw_Tooltip.content_vars = {
+    L1: {
+        img: 'images/dw-btn.gif',
+        w: 80, // width of image
+        h: 24 // height of image
+
+    },
+    L2: {
+        img: 'images/dot-com-btn.gif',
+        w: 176,
+        h: 30
+    }
+}
+
+</script>
+</head>
+<body>
+
+<h1>Images in the Tooltip</h1>
+
+<p><a href="index.html" class="showTip L1">Link 1</a></p>
+<p><a href="index.html" class="showTip L2">Link 2</a></p>
+
+
+<p>Back to <a href="index.html">index</a></p>
+
+</body>
+</html>

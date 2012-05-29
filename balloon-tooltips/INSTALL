@@ -1,0 +1,35 @@
+Balloon tooltips 
+Sheldon McKay <mckays@cshl.edu>
+February 28, 2012
+
+NOTE:
+Complete documentation for installation and use of the balloon toolip library
+can be found on the web at:
+
+http://www.gmod.org/wiki/Popup_Balloons
+
+Components of this package:
+
+-javascript 
+htdocs/js/balloon.js
+htdocs/js/balloon.config.js
+htdocs/js/prototype.js
+htdocs/js/box.js
+
+-balloon images
+htdocs/images/balloons/GBubble/up_left.png
+htdocs/images/balloons/GBubble/down_left.png
+htdocs/images/balloons/GBubble/up_right.png
+htdocs/images/balloons/GBubble/down_right.png
+htdocs/images/balloons/GBubble/balloon.png
+htdocs/images/balloons/GBubble/balloon_ie.png
+htdocs/images/balloons/GBubble/close.png
+htdocs/images/balloons/GPlain/up_left.png
+htdocs/images/balloons/GPlain/down_left.png
+htdocs/images/balloons/GPlain/up_right.png
+htdocs/images/balloons/GPlain/down_right.png
+htdocs/images/balloons/GPlain/balloon.png
+htdocs/images/balloons/GPlain/close.png
+
+-example implementations (in this distribution)
+htdocs/balloons.html
